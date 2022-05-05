@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniProject001.API", "MiniProject001.API\MiniProject001.API.csproj", "{49222A2C-3F08-4C29-8CD3-AB6A0D12FC46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniProject001.DAL", "MiniProject001.DAL\MiniProject001.DAL.csproj", "{ED78F390-5ABD-4D0B-9FAF-F85D3FDAEC39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49222A2C-3F08-4C29-8CD3-AB6A0D12FC46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49222A2C-3F08-4C29-8CD3-AB6A0D12FC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49222A2C-3F08-4C29-8CD3-AB6A0D12FC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49222A2C-3F08-4C29-8CD3-AB6A0D12FC46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED78F390-5ABD-4D0B-9FAF-F85D3FDAEC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED78F390-5ABD-4D0B-9FAF-F85D3FDAEC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED78F390-5ABD-4D0B-9FAF-F85D3FDAEC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED78F390-5ABD-4D0B-9FAF-F85D3FDAEC39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {127C4F71-8B86-4287-BBED-0674B0852C5E}
+	EndGlobalSection
+EndGlobal
