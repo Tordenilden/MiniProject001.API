@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MiniProject001.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace MiniProject001.API
     {
         public static void Main(string[] args)
         {
+            //AuthorRepository a = new AuthorRepository();
+            //a.createAuthor(new DAL.Database.Models.Author { age = 5 });
             CreateHostBuilder(args).Build().Run();
         }
 
