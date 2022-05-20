@@ -14,5 +14,6 @@ namespace MiniProject001.DAL.Database.Models
         public int age { get; set; }
         public string password { get; set; }
         public bool isAlive { get; set; }
+        public List<Book> Book { get; set; }
     }
 }

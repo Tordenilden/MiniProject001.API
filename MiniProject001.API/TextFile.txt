@@ -1,0 +1,18 @@
+﻿create author
+{
+  "authorId": 0,
+  "name": "Andersine",
+  "age": 44,
+  "password": "12341234",
+  "isAlive": true,
+  "book": [
+    {
+      "bookId": 0,
+      "title": "Vikingerne 4",
+      "pages": 100,
+      "wordCount": 2000,
+      "binding": true,
+      "releaseYear": "2022-05-20T06:50:43.603Z"
+    }
+  ]
+}

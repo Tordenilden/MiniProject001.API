@@ -13,9 +13,12 @@ namespace MiniProject001.DAL
     public interface IAuthorRepository
     {
         Task<List<Author>> getAllAuthors();
+        Task<List<Author>> getAllAuthorsAndBooks();
+        Task<List<Author>> getAllAuthorsAndBooksDesc();
         Author getAuthor(int authorId);
         Task<int> createAuthor(Author author);
         Task<Author> deleteAuthor(int authorId);
+        //void createAuthor(Author author);
     }
 
     public class AuthorRepository : IAuthorRepository
@@ -43,12 +46,20 @@ namespace MiniProject001.DAL
         #endregion       getAuthor
 
         #region etellerandet navn lige her
-        public async Task<int> createAuthor(Author author) {
+        public async Task<int> createAuthor(Author author)
+        {
             // burde jeg ikke tjekke om author findes i forvejen??
             var temp = context.Author.Add(author);
             int t = await context.SaveChangesAsync();
             return t;
         }
+        //public void createAuthor(Author author)
+        //{
+        //    // burde jeg ikke tjekke om author findes i forvejen??
+        //    var temp = context.Author.Add(author);
+        //    int t =  context.SaveChanges();
+        //    //return t;
+        //}
         #endregion entity
         public async Task<Author> deleteAuthor(int authorId) {
             //authorExists = context.Author.FirstOrDefaultAsync(græsk)
@@ -60,6 +71,21 @@ namespace MiniProject001.DAL
             }          
             return authorExists;
             //context.Author.Remove(hvilken author er det!!)
+        }
+
+        public async Task<List<Author>> getAllAuthorsAndBooks()
+        {
+            List<Author> list = new List<Author>();
+            list = await context.Author.Include(author => author.Book).ToListAsync();
+            return list;
+        }
+
+        public async Task<List<Author>> getAllAuthorsAndBooksDesc()
+        {
+            List<Author> list = new List<Author>();
+            list = await context.Author.Include(author => author.Book)
+                .OrderByDescending((a) => a.name).ToListAsync();
+            return list;
         }
     }
 }

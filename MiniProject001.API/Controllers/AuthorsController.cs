@@ -30,6 +30,47 @@ namespace MiniProject001.API.Controllers
             return Ok(await repo.getAllAuthors()); // Ok kan typecast 98% af alt kode fy ha!!
             //return await _context.Author.ToListAsync();
         }
+        [HttpGet("books")]
+        public async Task<ActionResult> getAllAuthorsAndBooks()
+        {
+            return Ok(await repo.getAllAuthorsAndBooks()); // Ok kan typecast 98% af alt kode fy ha!!
+            //return await _context.Author.ToListAsync();
+        }
+        [HttpGet("nameDesc")]
+        public async Task<ActionResult> getAllAuthorsAndBooksDesc()
+        {
+            return Ok(await repo.getAllAuthorsAndBooksDesc()); // Ok kan typecast 98% af alt kode fy ha!!
+            //return await _context.Author.ToListAsync();
+        }
+
+
+        //Task<List<Author>> getAllAuthorsAndBooks();
+        //Task<List<Author>> getAllAuthorsAndBooksDesc();
+        //[HttpPost]
+        //public void createAuthor(Author author)
+        //{
+        //    // i dette lag hvad skal vi her!!
+
+        //    try
+        //    { // tester om det virker..
+        //        repo.createAuthor(author);
+        //        //if (response != 1) // hvis author ikke blev oprettet
+        //        //{
+        //        //    return Problem("du har jokket det forkerte sted");
+        //        //}
+        //        //return Ok(response); // Ok kommer fra actionresult....
+        //                             // TODO kan man lave Ok om til Created???
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        // kunne være internt - især log hvis det er servere...
+        //       // return Problem(error.Message + "vores eget ...");
+        //    }
+        //    //_context.Author.Add(author);
+        //    //await _context.SaveChangesAsync();
+
+        //    //return CreatedAtAction("GetAuthor", new { id = author.AuthorId }, author);
+        //}
 
         [HttpPost]
         public async Task<ActionResult<Author>> createAuthor(Author author)
@@ -39,6 +80,7 @@ namespace MiniProject001.API.Controllers
             try
             { // tester om det virker..
                 var response = await repo.createAuthor(author);
+                
                 if (response != 1) // hvis author ikke blev oprettet
                 {
                     return Problem("du har jokket det forkerte sted");
