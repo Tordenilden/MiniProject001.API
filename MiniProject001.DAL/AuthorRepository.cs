@@ -20,6 +20,14 @@ namespace MiniProject001.DAL
         Task<Author> deleteAuthor(int authorId);
         //void createAuthor(Author author);
     }
+    /// <summary>
+    /// OPGAVER:
+    /// Prøv at query Author+(Book) : isAlive  true/false
+    ///                             : age mellem 30 og 50
+    /// Prøv at query Book+(Author) : title descending
+    ///                             : releaseYear efter 2010 eks.
+    /// 
+    /// </summary>
 
     public class AuthorRepository : IAuthorRepository
     {
