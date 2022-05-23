@@ -15,10 +15,15 @@ namespace MiniProject001.DAL
         Task<List<Author>> getAllAuthors();
         Task<List<Author>> getAllAuthorsAndBooks();
         Task<List<Author>> getAllAuthorsAndBooksDesc();
+        Task<List<int>> getAllAuthorsSelect1();
+        List<dynamic> getAllAuthorsSelect2();
+        Task<List<dynamic>> getAllAuthorsSelect4();
+        // Task<List<Author>> getAllAuthorsAndBooks();
         Author getAuthor(int authorId);
         Task<int> createAuthor(Author author);
         Task<Author> deleteAuthor(int authorId);
         //void createAuthor(Author author);
+        //3 methods with Select kl 1200
     }
     /// <summary>
     /// OPGAVER:
@@ -95,6 +100,51 @@ namespace MiniProject001.DAL
                 .OrderByDescending((a) => a.name).ToListAsync();
             return list;
         }
+
+
+
+
+
+
+
+
+
+        public async Task<List<int>> getAllAuthorsSelect1()
+        {
+            return await context.Author.Select((a) => a.age).ToListAsync();
+        }
+        public List<dynamic> getAllAuthorsSelect2()
+        {
+            return context.Author.Select((a) => new { age = a.age }).Cast<dynamic>().ToList();
+        }
+
+
+        public async Task<List<AuthorNew>> getAllAuthorsSelect13()
+        {
+            return await context.Author.Select((a) => new AuthorNew { age=a.age} ).ToListAsync();
+        }
+
+        //public async Task<List<bool>> getAllAuthorsSelect11()
+        //{
+        //    return await context.Author.Select((a) => new { hundehvalp = a.isAlive}).ToListAsync();
+        //}
+
+
+
+
+
+        //når I keder jer skal I se om I kan løse denne query
+        //få return til at fungere
+        //public async Task<List<dynamic>> getAllAuthorsSelect3()
+        //{
+        //    return await context.Author.Select((a) => new { name = a.name, age = a.age }).OrderBy(a => a.age).ToListAsync();
+        //}
+
+        public async Task<List<dynamic>> getAllAuthorsSelect4()
+        {
+            return await context.Author.Select((a) => new { age = a.age }).OrderBy(o => o.age).Cast<dynamic>() .ToListAsync();
+        }
+
     }
 }
 

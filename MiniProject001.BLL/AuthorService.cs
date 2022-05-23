@@ -31,6 +31,7 @@ namespace MiniProject001.BLL
         {
             context = c;
         }
+        // Jætte kedeligt...
         public async Task<List<Author>> getAllAuthors()
         {
             return await context.getAllAuthors();

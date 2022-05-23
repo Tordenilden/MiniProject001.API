@@ -43,6 +43,44 @@ namespace MiniProject001.API.Controllers
             //return await _context.Author.ToListAsync();
         }
 
+        [HttpGet("select")]
+        public async Task<ActionResult> getAllAuthorsSelect1()
+        {
+            return Ok(await repo.getAllAuthorsSelect1()); 
+
+        }
+        [HttpGet("selectWithNew")]
+        public async Task<ActionResult> getAllAuthorsSelect2()
+        {
+            return Ok(await Task.Run(() => repo.getAllAuthorsSelect2()));
+        }
+
+        [HttpGet("selectWithNew4")]
+        public async Task<ActionResult> getAllAuthorsSelect4()
+        {
+            return Ok(await repo.getAllAuthorsSelect4());
+        }
+
+        //[HttpGet("selectWithNew4Sorteret")]
+        //public async Task<ActionResult> getAllAuthorsSelect4Sorteret()
+        //{
+        //    return Ok(await repo.getAllAuthorsSelect4Sorteret());
+        //}
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //Task<List<Author>> getAllAuthorsAndBooks();
         //Task<List<Author>> getAllAuthorsAndBooksDesc();

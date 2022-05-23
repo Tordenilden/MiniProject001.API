@@ -42,7 +42,7 @@ namespace MiniProject001.API
                 });
             });
             services.AddScoped<IAuthorRepository, AuthorRepository>();
-            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<IAuthorService, AuthorService>(); // DI
             //services.AddDbContext<AbContext>();//fejl mangler
             services.AddDbContext<AbContext>(options =>
                 options.UseSqlServer(@"Server=TEC-5350-LA0052;Database=OnsdagAften; Trusted_Connection=True"));
