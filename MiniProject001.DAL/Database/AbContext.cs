@@ -17,6 +17,8 @@ namespace MiniProject001.DAL.Database
 
         public DbSet<Author> Author { get; set; }
         public DbSet<Book> Book { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<Student> Student { get; set; }
     }
 }
 //} // når vi skal teste vores repo...

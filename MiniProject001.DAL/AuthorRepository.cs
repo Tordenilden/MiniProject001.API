@@ -115,7 +115,7 @@ namespace MiniProject001.DAL
         }
         public List<dynamic> getAllAuthorsSelect2()
         {
-            return context.Author.Select((a) => new { age = a.age }).Cast<dynamic>().ToList();
+            return context.Author.Select((a) => new { age = a.age, name = a.name }).Cast<dynamic>().ToList();
         }
 
 
